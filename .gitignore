@@ -3,3 +3,7 @@
 ################################################################################
 
 /src/Carve.Framework/obj/Debug
+/src/.vs/Carve/v14
+/src/Carve.Framework.Tests/obj/Debug
+*.user
+/src/packages

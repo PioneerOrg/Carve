@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3E7994AA-E920-447F-9E98-A578E086F1AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Carve.Framework</RootNamespace>
+    <AssemblyName>Carve.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Environment\ApplicationEnvironment.cs" />
+    <Compile Include="Environment\AutofacUtil\ConfigurationSettingsReaderConstants.cs" />
+    <Compile Include="Environment\AutofacUtil\DynamicProxy2\ConstructorFinderWrapper.cs" />
+    <Compile Include="Environment\AutofacUtil\DynamicProxy2\DynamicProxyContext.cs" />
+    <Compile Include="Environment\AutofacUtil\DynamicProxy2\DynamicProxyExtensions.cs" />
+    <Compile Include="Environment\AutofacUtil\LifetimeScopeContainer.cs" />
+    <Compile Include="Environment\CollectionOrderModule.cs" />
+    <Compile Include="Environment\Configuration\AppConfigurationAccessor.cs" />
+    <Compile Include="Environment\Configuration\ExtensionLocations.cs" />
+    <Compile Include="Environment\Configuration\IAppConfigurationAccessor.cs" />
+    <Compile Include="Environment\Configuration\IShellSettingsManager.cs" />
+    <Compile Include="Environment\Configuration\IShellSettingsManagerEventHandler.cs" />
+    <Compile Include="Environment\Configuration\ShellSettings.cs" />
+    <Compile Include="Environment\Configuration\ShellSettingsManager.cs" />
+    <Compile Include="Environment\Configuration\ShellSettingsSerializer.cs" />
+    <Compile Include="Environment\Configuration\TenantState.cs" />
+    <Compile Include="Environment\DefaultHostContainer.cs" />
+    <Compile Include="Environment\DefaultHostEnvironment.cs" />
+    <Compile Include="Environment\DefaultOrchardHost.cs" />
+    <Compile Include="Environment\DefaultOrchardShell.cs" />
+    <Compile Include="Environment\Descriptor\IShellDescriptorManager.cs" />
+    <Compile Include="Environment\Descriptor\Models\ShellDescriptor.cs" />
+    <Compile Include="Environment\Descriptor\ShellDescriptorCache.cs" />
+    <Compile Include="Environment\Extensions\Compilers\CompileExtensionContext.cs" />
+    <Compile Include="Environment\Extensions\Compilers\CSharpExtensionBuildProviderShim.cs" />
+    <Compile Include="Environment\Extensions\Compilers\DefaultExtensionCompiler.cs" />
+    <Compile Include="Environment\Extensions\Compilers\DefaultProjectFileParser.cs" />
+    <Compile Include="Environment\Extensions\Compilers\IExtensionCompiler.cs" />
+    <Compile Include="Plugins\Folders\CoreModuleFolders.cs" />
+    <Compile Include="Plugins\Folders\IPluginFolders.cs" />
+    <Compile Include="Plugins\Folders\IPluginHarvester.cs" />
+    <Compile Include="Plugins\Folders\ModuleFolders.cs" />
+    <Compile Include="Plugins\Folders\PluginHarvester.cs" />
+    <Compile Include="Plugins\Folders\ThemeFolders.cs" />
+    <Compile Include="Plugins\PluginEntry.cs" />
+    <Compile Include="Plugins\IPluginManager.cs" />
+    <Compile Include="Environment\Extensions\Compilers\IProjectFileParser.cs" />
+    <Compile Include="Environment\Extensions\Compilers\ProjectFileDescriptor.cs" />
+    <Compile Include="Environment\Extensions\DefaultCriticalErrorProvider.cs" />
+    <Compile Include="Environment\Extensions\ExtensionEntry.cs" />
+    <Compile Include="Environment\Extensions\ExtensionLoaderCoordinator.cs" />
+    <Compile Include="Environment\Extensions\ExtensionLoadingContext.cs" />
+    <Compile Include="Environment\Extensions\ExtensionManager.cs" />
+    <Compile Include="Environment\Extensions\ExtensionMonitoringCoordinator.cs" />
+    <Compile Include="Environment\Extensions\Folders\CoreModuleFolders.cs" />
+    <Compile Include="Environment\Extensions\Folders\ExtensionHarvester.cs" />
+    <Compile Include="Environment\Extensions\Folders\IExtensionFolders.cs" />
+    <Compile Include="Environment\Extensions\Folders\IExtensionHarvester.cs" />
+    <Compile Include="Environment\Extensions\Folders\ModuleFolders.cs" />
+    <Compile Include="Environment\Extensions\Folders\ThemeFolders.cs" />
+    <Compile Include="Environment\Extensions\Helpers\PathHelpers.cs" />
+    <Compile Include="Environment\Extensions\ICriticalErrorProvider.cs" />
+    <Compile Include="Environment\Extensions\IExtensionLoaderCoordinator.cs" />
+    <Compile Include="Environment\Extensions\IExtensionManager.cs" />
+    <Compile Include="Environment\Extensions\IExtensionMonitoringCoordinator.cs" />
+    <Compile Include="Environment\Extensions\Loaders\CoreExtensionLoader.cs" />
+    <Compile Include="Environment\Extensions\Loaders\DynamicExtensionLoader.cs" />
+    <Compile Include="Environment\Extensions\Loaders\ExtensionLoaderBase.cs" />
+    <Compile Include="Environment\Extensions\Loaders\IExtensionLoader.cs" />
+    <Compile Include="Environment\Extensions\Loaders\PrecompiledExtensionLoader.cs" />
+    <Compile Include="Environment\Extensions\Loaders\RawThemeExtensionLoader.cs" />
+    <Compile Include="Environment\Extensions\Loaders\ReferencedExtensionLoader.cs" />
+    <Compile Include="Environment\Extensions\Models\DefaultExtensionTypes.cs" />
+    <Compile Include="Environment\Extensions\Models\ExtensionDescriptor.cs" />
+    <Compile Include="Environment\Extensions\Models\Feature.cs" />
+    <Compile Include="Environment\Extensions\Models\FeatureDescriptor.cs" />
+    <Compile Include="Environment\Extensions\Models\LifecycleStatus.cs" />
+    <Compile Include="Environment\Extensions\OrchardFeatureAttribute.cs" />
+    <Compile Include="Environment\Extensions\OrchardSuppressDependencyAttribute.cs" />
+    <Compile Include="Environment\Features\FeatureManager.cs" />
+    <Compile Include="Environment\Features\IFeatureManager.cs" />
+    <Compile Include="Environment\HostComponentsConfigModule.cs" />
+    <Compile Include="Environment\HostEnvironment.cs" />
+    <Compile Include="Environment\IApplicationEnvironment.cs" />
+    <Compile Include="Environment\IAssemblyBuilder.cs" />
+    <Compile Include="Environment\IAssemblyLoader.cs" />
+    <Compile Include="Environment\IAssemblyNameResolver.cs" />
+    <Compile Include="Environment\IBuildManager.cs" />
+    <Compile Include="Environment\IFeatureEventHandler.cs" />
+    <Compile Include="Environment\IHostEnvironment.cs" />
+    <Compile Include="Environment\IHostLocalRestart.cs" />
+    <Compile Include="Environment\IOrchardFrameworkAssemblies.cs" />
+    <Compile Include="Environment\IOrchardHost.cs" />
+    <Compile Include="Environment\IOrchardHostContainer.cs" />
+    <Compile Include="Environment\IOrchardShell.cs" />
+    <Compile Include="Environment\IOrchardShellEvents.cs" />
+    <Compile Include="Environment\IShellContainerRegistrations.cs" />
+    <Compile Include="Environment\IShim.cs" />
+    <Compile Include="Environment\IWorkContextEvents.cs" />
+    <Compile Include="Environment\OrchardHostContainerRegistry.cs" />
+    <Compile Include="Environment\OrchardServices.cs" />
+    <Compile Include="Environment\OrchardStarter.cs" />
+    <Compile Include="Environment\RunningShellTable.cs" />
+    <Compile Include="Environment\ShellBuilders\CompositionStrategy.cs" />
+    <Compile Include="Environment\ShellBuilders\ICompositionStrategy.cs" />
+    <Compile Include="Environment\ShellBuilders\Models\ShellBlueprint.cs" />
+    <Compile Include="Environment\ShellBuilders\ShellContainerFactory.cs" />
+    <Compile Include="Environment\ShellBuilders\ShellContext.cs" />
+    <Compile Include="Environment\ShellBuilders\ShellContextFactory.cs" />
+    <Compile Include="Environment\State\ContextState.cs" />
+    <Compile Include="Environment\State\DefaultProcessingEngine.cs" />
+    <Compile Include="Environment\State\IProcessingEngine.cs" />
+    <Compile Include="Environment\State\IShellStateManager.cs" />
+    <Compile Include="Environment\State\IShellStateManagerEventHandler.cs" />
+    <Compile Include="Environment\State\Models\ShellState.cs" />
+    <Compile Include="Environment\State\ShellStateCoordinator.cs" />
+    <Compile Include="Environment\ViewsBackgroundCompilation.cs" />
+    <Compile Include="Environment\Warmup\WarmupUtility.cs" />
+    <Compile Include="Environment\WorkContextAccessor.cs" />
+    <Compile Include="Environment\WorkContextImplementation.cs" />
+    <Compile Include="Environment\WorkContextModule.cs" />
+    <Compile Include="Environment\WorkContextProperty.cs" />
+    <Compile Include="Plugins\Models\DefaultExtensionTypes.cs" />
+    <Compile Include="Plugins\Models\ExtensionDescriptor.cs" />
+    <Compile Include="Plugins\Models\Feature.cs" />
+    <Compile Include="Plugins\Models\FeatureDescriptor.cs" />
+    <Compile Include="Plugins\Models\LifecycleStatus.cs" />
+    <Compile Include="Plugins\PluginManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\DependencyOrderingUtility.cs" />
+    <Compile Include="Utility\Extensions\HttpRequestExtensions.cs" />
+    <Compile Include="Utility\Extensions\ReadOnlyCollectionExtensions.cs" />
+    <Compile Include="Utility\Extensions\RouteValueDictionaryExtensions.cs" />
+    <Compile Include="Utility\Extensions\StringExtensions.cs" />
+    <Compile Include="Utility\Extensions\VirtualPathProviderExtensions.cs" />
+    <Compile Include="Utility\Hash.cs" />
+    <Compile Include="Utility\NamedReaderWriterLock.cs" />
+    <Compile Include="Utility\Position.cs" />
+    <Compile Include="Utility\Reflect.cs" />
+    <Compile Include="Utility\ReflectionHelper.cs" />
+    <Compile Include="Utility\ReflectOn.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
